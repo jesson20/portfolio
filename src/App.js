@@ -1,60 +1,37 @@
 import React, { useState } from "react";
-import "./App.css"; // Make sure to include your CSS for active-link and active-tab classes
-import { utils, writeFile } from "xlsx";
+import "./App.css"; // Ensure this CSS file contains the styles mentioned above
 
 const App = () => {
   const [activeTab, setActiveTab] = useState("skills");
-  const [formData, setFormData] = useState({
-    Name: '',
-    email: '',
-    Message: ''
-  });
+  
 
   const opentab = (tabname) => {
     setActiveTab(tabname);
   };
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Create a new workbook and worksheet
-    const wb = utils.book_new();
-    const ws = utils.json_to_sheet([formData]);
-
-    // Append worksheet to workbook
-    utils.book_append_sheet(wb, ws, "Form Submissions");
-
-    // Write the workbook to an Excel file
-    writeFile(wb, "form-submissions.xlsx");
-
-    // Clear the form fields
-    setFormData({ name: "", email: "", message: "" });
-    alert("Message saved to Excel!");
-  };
+  
 
   return (
     <div>
+      <nav className="navbar">
+        <div className="container">
+        <a href="#header"><img src="images/logo100.png" className="logo" alt="Logo" /></a>
+          <ul>
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+
       <div id="header">
         <div className="container">
-          <nav>
-            <img src="images/logo100.png" className="logo" alt="Logo" />
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Portfolio</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </nav>
           <div className="header-text">
-            <p>Computer Science Student</p>
+            <p>Programmer</p>
             <h1>
               Hi, I'm <span>Jesson</span> <br />
-              From Caraga States University
+              From Butuan, Philippines
             </h1>
           </div>
         </div>
@@ -69,18 +46,10 @@ const App = () => {
             <div className="about-col-2">
               <h1 className="subtitle">About Me</h1>
               <p>
-                "Hello, I'm Jesson Maurice B. Antiporda from Butuan City,
-                currently pursuing a Bachelor of Science in Computer Science at
-                Caraga State University. I am seeking an internship or part-time
-                opportunity to apply and enhance my skills in software/web
-                development. I have a solid foundation in programming languages
-                such as C, Java, JavaScript, Python, and PostgreSQL, with
-                experience in frameworks like Express, Vue, Angular, and Nuxt. I
-                have developed several projects, including a To-Do List, a
-                Philippine Tax Calculator, and a Portfolio web application, all
-                deployed using Vercel. My technical skills are complemented by
-                proficiency in tools like Git, Postman, and Vite, and strong
-                communication abilities in English.
+                Hello, I'm Jesson Maurice B. Antiporda from Butuan City, currently pursuing 
+                a Bachelor of Science in Computer Science at Caraga State University and set 
+                to graduate soon. I am seeking an internship or part-time opportunity to apply 
+                and further enhance my programming skills.
               </p>
 
               <div className="tab-titles">
@@ -88,7 +57,7 @@ const App = () => {
                   className={`tab-links ${activeTab === "skills" ? "active-link" : ""}`}
                   onClick={() => opentab("skills")}
                 >
-                  Skills
+                  Technical Skills
                 </p>
                 <p
                   className={`tab-links ${activeTab === "experience" ? "active-link" : ""}`}
@@ -108,11 +77,11 @@ const App = () => {
                 id="skills"
               >
                 <ul>
-                  <li><span>C</span><br />Basic</li>
-                  <li><span>C#</span><br />Basic</li>
-                  <li><span>Java</span><br />Basic</li>
-                  <li><span>HTML/CSS</span><br />Basic</li>
-                  <li><span>JavaScript</span><br />Basic</li>
+                  <li><span>C, Java, JavaScript, PostgreSQL, Python</span><br />Programming Languages</li>
+                  <li><span>Express, Vue, Angular, Nuxt</span><br />Frameworks</li>
+                  <li><span>React</span><br />Libraries</li>
+                  <li><span> Git, Postman, Vite</span><br />Developer Tools</li>
+                  <li><span>HTML, CSS</span><br />Others</li>
                 </ul>
               </div>
               <div
@@ -120,7 +89,7 @@ const App = () => {
                 id="experience"
               >
                 <ul>
-                  <li><span>No Experience Yet</span><br />Still Looking</li>
+                  <li><span>No Experience Yet</span><br />Hopefully, you will be the first.</li>
                 </ul>
               </div>
               <div
@@ -129,9 +98,15 @@ const App = () => {
               >
                 <ul>
                   <li>
-                    <span>Bachelor of Science in Computer Science</span><br />
-                    Caraga State University
+                    <span>Bachelor of Science in Computer Science (2021 - Present)</span><br />
+                    Caraga State University, Amapayon, Butuan City, 8600
                   </li>
+
+                  <li>
+                    <span> Accountancy, Business and Management (2018 - 2020)</span><br />
+                    Father Saturnino Urios University, San Francisco St., Butuan City, 8600
+                  </li>
+                  
                 </ul>
               </div>
             </div>
@@ -139,40 +114,7 @@ const App = () => {
         </div>
       </div>
 
-      <div id="services">
-        <div className="container">
-          <h1 className="subtitle">My Services</h1>
-          <div className="service-list">
-            <div>
-              <i className="fa-solid fa-code"></i>
-              <h2>Web Design</h2>
-              <p>
-                wqeqweqweqweqweqwe qeqweqweqweqwewq qwewqeqweqweqwe
-                qwewqeqweqweqweeqwewq qewwqewqeqw
-              </p>
-              <a href="#">Learn more</a>
-            </div>
-            <div>
-              <i className="fa-solid fa-crop"></i>
-              <h2>Web Design</h2>
-              <p>
-                wqeqweqweqweqweqwe qeqweqweqweqwewq qwewqeqweqweqwe
-                qwewqeqweqweqweeqwewq qewwqewqeqw
-              </p>
-              <a href="#">Learn more</a>
-            </div>
-            <div>
-              <i className="fa-brands fa-app-store"></i>
-              <h2>Web Design</h2>
-              <p>
-                wqeqweqweqweqweqwe qeqweqweqweqwewq qwewqeqweqweqwe
-                qwewqeqweqweqweeqwewq qewwqewqeqw
-              </p>
-              <a href="#">Learn more</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      
 
       <div id="portfolio">
         <div className="container">
@@ -186,6 +128,10 @@ const App = () => {
                   The app that can list your todos.
                   Open it in web.
                 </p>
+                <p>•	Developed using HTML, CSS, and Vue.js as an assignment for one of our subjects.</p>
+                <p> •	Utilized Vite for optimized build tooling and development workflow.</p>
+                <p>•	Deployed the application using Vercel for efficient hosting and continuous deployment.</p>
+
                 <a href="https://vue-todo-list-blue.vercel.app/"><i className="fa-solid fa-link"></i></a>
               </div>
             </div>
@@ -197,22 +143,24 @@ const App = () => {
                   The app calculates your net pay and taxes.
                   Open it in web.
                 </p>
+                <p>• Developed using HTML, CSS, and Vanilla JavaScript for my personal project.</p>
+                <p> •	Utilized Vite for optimized build tooling and development workflow.</p>
+                <p>•	Deployed the application using Vercel for efficient hosting and continuous deployment. </p>
+
                 <a href="https://tax-calculator-neon.vercel.app/"><i className="fa-solid fa-link"></i></a>
               </div>
             </div>
-            
           </div>
-          <a href="#" className="btn">See more</a>
         </div>
       </div>
 
       <div id="contact">
         <div className="container">
-          <div className="row">
+          
             <div className="contact-left">
               <h1 className="subtitle">Contact Me</h1>
               <p>
-                <i className="fa-solid fa-paper-plane"></i>jessonmaurice.antiporda@gmail.com
+             <i className="fa-solid fa-paper-plane"></i>jessonmaurice.antiporda@gmail.com
               </p>
               <p><i className="fa-solid fa-phone"></i>09353606427</p>
               <div className="social-icons">
@@ -237,42 +185,9 @@ const App = () => {
                 Download CV
               </a>
             </div>
-            <div className="contact-right">
-            <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        <textarea
-          name="message"
-          rows="6"
-          placeholder="Your Message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-        ></textarea>
-        <button type="submit" class ="btn btn2">Submit</button>
-      </form>
-            </div>
-          </div>
+    
         </div>
-        <div className="copyright">
-          <p>
-            Copyright c Jesson. A programmer <i className="fa-solid fa-heart"></i>
-          </p>
-        </div>
+        
       </div>
     </div>
   );

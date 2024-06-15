@@ -5,20 +5,47 @@
     box-sizing: border-box;
 }
 body{
-    background: #080808;
-    color: #fff;
+    background: #222831;
+    color: #EEEEEE;
 }
-#header{
+#header {
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 80px); /* Adjusted height to account for the navbar */
     background-image: url(images/background-image.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right;
+    padding-top: 80px; /* Added padding to avoid content hiding behind the navbar */
 }
 
+
 .container{
-    padding: 10px 10%;
+    padding: 10px 5%;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #393E46;
+    z-index: 1000; /* Ensure it's above other content */
+    padding: 10px 0;
+  }
+
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+  }
+
+#about,
+#services,
+#portfolio,
+#contact {
+    padding-top: 80px; /* Height of the fixed navbar */
 }
 
 nav{
@@ -29,7 +56,7 @@ nav{
 }
 
 .logo{
-    width: 140px;
+    width: 50px;
 }
 
 nav ul li{
@@ -38,7 +65,7 @@ nav ul li{
     margin: 10px 20px;
 }
  nav ul li a{
-    color: #fff;
+    color: #EEEEEE;
     text-decoration: none;
     font-size: 18px;
     position: relative;
@@ -47,7 +74,7 @@ nav ul li{
     content: '';
     width: 0;
     height: 3px;
-    background: aqua;
+    background: #00ADB5;
     position: absolute;
     left:0;
     bottom: -6px;
@@ -65,13 +92,13 @@ nav ul li{
     margin-top: 20px;
  }
  .header-text h1 span{
-    color:aqua;
+    color:#00ADB5;
  }
 
 /* <!------------- About ------------- */
-#about{
+#about {
     padding: 80px 0;
-    color: #ababab;
+    color: #EEEEEE;
 }
 .row{
     display: flex;
@@ -91,7 +118,7 @@ nav ul li{
 .subtitle{
     font-size: 60px;
     font-weight: 600;
-    color: #fff;
+    color: #EEEEEE;
 }
 .tab-titles{
     display: flex;
@@ -108,7 +135,7 @@ nav ul li{
     content: '';
     width: 0;
     height: 3px;
-    background: aqua;
+    background: #00ADB5;
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -123,7 +150,7 @@ nav ul li{
     margin: 10px 0;
 }
 .tab-contents ul li span{
-    color: aqua;
+    color: #00ADB5;
     font-size: 14px;
 }
 
@@ -134,51 +161,16 @@ nav ul li{
 .tab-contents.active-tab{
     display: block;
 }
-/* ---------------- services -------------------*/
-#services{
-    padding: 30px 0;
-}
-.service-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
-    grid-gap: 40px;
-    margin-top: 50px;
-}
-.service-list div{
-    background: #262626;
-    padding: 40px;
-    font-size: 13px;
-    font-weight: 300;
-    border-radius: 10px;
-    transition: background0.5s, transform 0.5s;
-}
-.service-list div i{
-    font-size: 50px;
-    margin-bottom: 30px;
-}
-.service-list div h2{
-    font-size: 30px;
-    font-weight: 500;
-    margin-bottom: 15px;
-}
-.service-list div a{
-    text-decoration: none;
-    color: #fff;
-    font-size: 12px;
-    margin-top: 20px;
-    display: inline-block;
-}
-.service-list div:hover{
-    background: aqua;
-    transform: translateY(-10px);
-}
+
 /* ------------porfolio--------------- */
-#porfolio{
-    padding: 50px 0;
+#portfolio {
+    padding: 20px 0;
 }
+
 .work-list{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+    max-width: fit-content;
     grid-gap: 40px;
     margin-top: 50px;
 }
@@ -196,7 +188,7 @@ nav ul li{
 .layer{
     width: 100%;
     height: 0;
-    background: linear-gradient(rgba(0,0,0,0.6), aqua);
+    background: linear-gradient(rgba(0,0,0,0.6), #00ADB5);
     border-radius: 10px;
     position: absolute;
     left: 0;
@@ -213,15 +205,22 @@ nav ul li{
 }
 .layer h3{
     font-weight: 500;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.layer p{
+    font-weight: 500;
+    font-size: 20px;
     margin-bottom: 20px;
 }
 .layer a{
     margin-top: 20px;
-    color: aqua;
+    color: #00ADB5;
     text-decoration: none;
     font-size: 18px;
     line-height: 60px;
-    background: #fff;
+    background: #EEEEEE;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -237,29 +236,24 @@ nav ul li{
     display: block;
     margin: 50px auto;
     width: fit-content;
-    border: 1px solid aqua;
+    border: 1px solid #00ADB5;
     padding: 14px 50px;
     border-radius: 6px;
     text-decoration: none;
-    color: #fff;
+    color: #EEEEEE;
     transition: 0.5s;
 }
 .btn:hover{
-    background: aqua;
+    background: #00ADB5;
 }
 
 /* ------------contact-----------*/
-.contact-left{
-    flex-basis: 35%;
-}
-.contact-right{
-    flex-basis: 60%;
-}
+
 .contact-left p{
     margin-top: 30px;
 }
 .contact-left p i{
-    color: aqua;
+    color: #00ADB5;
     margin-right: 15px;
     font-size: 25px;
 }
@@ -275,47 +269,21 @@ nav ul li{
     transition: transform 0.5s;
 }
 .social-icons a:hover{
-    color: aqua;
+    color: #00ADB5;
     transform: translateY(-5px);
 }
 .btn.btn2{
-    display: inline-block;
-    background: aqua;
+    display: inline-block,;
+    background: #00ADB5;
 }
-.contact-right form{
-    width: 100%;
+
+html{
+    scroll-behavior: smooth;
 }
-form input, form textarea{
-    width: 100%;
-    border: 0;
-    outline: none;
-    background: #262626;
-    padding: 15px;
-    margin: 15px 0;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 6px;
-}
-form btn2{
-    padding: 14px 60px;
-    font-size: 18px;
-    margin-top: 20px;
-    cursor: pointer;
-}
-.copyright{
-    width: 100%;
-    text-align: center;
-    padding: 25px 0;
-    background: #262626;
-    font-weight: 300;
-    margin-top: 20px;
-}
-.copyright i{
-    color: aqua;
-}
+
 /* ----------------------- css for small screens ---------------- */
-@media only screen and (max-with: 600px){
-    #header{
-        background-image: url("images/background-image.png");
+@media only screen and (max-width: 600px) {
+    .header-text h1 {
+        font-size: 40px; /* Adjust font size for smaller screens */
     }
 }
