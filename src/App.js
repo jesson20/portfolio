@@ -263,7 +263,7 @@ const App = () => {
           onChange={handleChange}
           required
         ></textarea>
-        <button type="submit">Submit</button>
+        <button type="submit" class ="btn btn2">Submit</button>
       </form>
             </div>
           </div>
