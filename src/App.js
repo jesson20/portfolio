@@ -143,13 +143,30 @@ const App = () => {
                   The app calculates your net pay and taxes.
                   Open it in web.
                 </p>
-                <p>• Developed using HTML, CSS, and Vanilla JavaScript for my personal project.</p>
+                <p>• Developed using HTML, CSS, and React.js for my personal project.</p>
                 <p> •	Utilized Vite for optimized build tooling and development workflow.</p>
                 <p>•	Deployed the application using Vercel for efficient hosting and continuous deployment. </p>
 
                 <a href="https://tax-calculator-neon.vercel.app/"><i className="fa-solid fa-link"></i></a>
               </div>
             </div>
+
+            <div className="work">
+              <img src="images/work3.png" alt="Work 2" />
+              <div className="layer">
+                <h3>GWA Calculator</h3>
+                <p>
+                  The app calculates your General Weighted Average (GWA).
+                  Open it in web.
+                </p>
+                <p>• Developed using HTML, CSS, and React.js for my personal project.</p>
+                <p> •	Utilized Vite for optimized build tooling and development workflow.</p>
+                <p>•	Deployed the application using Vercel for efficient hosting and continuous deployment. </p>
+
+                <a href="https://gwa-calculator-liard.vercel.app/"><i className="fa-solid fa-link"></i></a>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
