@@ -181,14 +181,8 @@ const App = () => {
               </p>
               <p><i className="fa-solid fa-phone"></i>09353606427</p>
               <div className="social-icons">
-                <a href="https://www.facebook.com/AntipordaJesson?mibextid=ZbWKwL">
+                <a href="https://www.facebook.com/jessonmaurice.antiporda/">
                   <i className="fa-brands fa-facebook"></i>
-                </a>
-                <a href="https://twitter.com/JessonAntiporda">
-                  <i className="fa-brands fa-twitter-square"></i>
-                </a>
-                <a href="https://www.instagram.com/jessonantiporda/">
-                  <i className="fa-brands fa-instagram"></i>
                 </a>
                 <a href="https://www.linkedin.com/in/jesson-maurice-antiporda-bb5617278/">
                   <i className="fa-brands fa-linkedin"></i>
